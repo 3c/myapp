@@ -3,7 +3,7 @@ var router = express.Router();
 
 var mongoose = require('mongoose');
 var User = require('../models/m_users').user;
-mongoose.connect('mongodb://localhost/goumin');
+var db = mongoose.connect('mongodb://localhost/goumin');
 
 
 /* GET home page. */
@@ -21,6 +21,21 @@ router.post('/adduser', function(req, res, next) {
   person.save();
 
   res.send('ok');
+});
+
+
+router.get('/userlist', function(req, res, next) {
+
+  User.find(function(err,persons){
+      //查询到的所有person
+        console.log('person list is '+persons);
+
+	  res.render('userlist', {
+	                "userlist" : persons
+	            });	
+    });
+
+
 });
 
 
