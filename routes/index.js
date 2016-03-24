@@ -39,5 +39,16 @@ router.get('/userlist', function(req, res, next) {
 
 });
 
+router.get('/v1/userlist', function(req, res, next) {
+
+  User.find({},'-_id name phone',function(err,persons){
+      //查询到的所有person
+      console.log('person list is '+persons);
+      res.send(persons);
+    });
+
+
+});
+
 
 module.exports = router;
