@@ -8,7 +8,7 @@ var db = mongoose.connect('mongodb://localhost/goumin');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.redirect('/userlist');
 });
 
 router.get('/add_user', function(req, res, next) {
@@ -20,7 +20,8 @@ router.post('/adduser', function(req, res, next) {
   console.log('person is '+person);
   person.save();
 
-  res.send('ok');
+  res.redirect('/userlist');
+
 });
 
 
@@ -28,7 +29,7 @@ router.get('/userlist', function(req, res, next) {
 
   User.find(function(err,persons){
       //查询到的所有person
-        console.log('person list is '+persons);
+      console.log('person list is '+persons);
 
 	  res.render('userlist', {
 	                "userlist" : persons
