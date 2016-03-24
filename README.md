@@ -9,8 +9,10 @@
 ## 运行步骤
 1. 确保nodejs已安装，具体安装步骤在后面
 2. cd 进工程目录
-3. npm install express --save  
+3. npm install express --save
+  
 	npm install mongoose
+	
 	npm install
 4. npm start
 5. 浏览器打开 <a>http://127.0.0.1:3000/</a>
