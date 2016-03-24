@@ -7,7 +7,7 @@
 ![](http://7xpfmh.com1.z0.glb.clouddn.com/16-3-24/90747695.jpg)
 
 ## 运行步骤
-1. 确保nodejs已安装，具体安装步骤在后面
+1. 确保nodejs,mongodb已安装，具体安装步骤在后面
 2. cd 进工程目录
 3. npm install express --save
   
@@ -34,3 +34,20 @@
 	sudo apt-get install npm
 ### other linux
 	download ***.tar.gz , make install
+	
+## mongoDB
+### windows
+download file and double click     <a>http://www.mongodb.org/</a>
+
+	> cd C:\Program Files\mongodb\bin
+	> C:\Program Files\mongodb\bin>mongod -dbpath "C:\Program Files\mongodb\data\db"
+
+### ubuntu
+	https://docs.mongodb.org/master/tutorial/install-mongodb-on-ubuntu/?_ga=1.49695202.534451744.1453280087
+
+### mac
+	brew install mongodb 
+	启动：
+	mongod --config /usr/local/etc/mongod.conf
+
+[可视化工具robomongo](http://app.robomongo.org/download.html)
